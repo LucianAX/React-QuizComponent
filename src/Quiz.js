@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import QuizQuestion from './QuizQuestion.js';
+import QuizQuestion from './QuizQuestion';
 
 let quizData = require('./quiz_data.json');
 
-class Quiz extends Component {
+class Quiz extends Component 
+{
     constructor(props) {
         super(props);
         this.state = {
