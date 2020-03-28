@@ -21,6 +21,12 @@ class Quiz extends Component
         })
     }
 
+    handleResetClick() {
+        this.setState({
+            quiz_position: 1
+        })
+    }
+
     render() {
             //QuizEnd should display only at the end of the quiz, so isQuizEnd determines if it is the end
         const isQuizEnd = (this.state.quiz_position - 1 === quizData.quiz_questions.length) ? true : false;
@@ -28,7 +34,7 @@ class Quiz extends Component
         if (isQuizEnd) {
             return (
                 <div>
-                    <QuizEnd />
+                    <QuizEnd resetClickHandler={ this.handleResetClick.bind(this) } />
                 </div>
             )
         } else {
